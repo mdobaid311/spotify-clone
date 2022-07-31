@@ -9,7 +9,7 @@ import { useSession } from "next-auth/react";
 import Player from "./Player";
 
 const spotifyApi = new SpotifyWebApi({
-  clientId: process.env.SPOTIFY_CLIENT_ID,
+  clientId: "48258a03142c48859bd8de0ac503aa3c",
 });
 
 const Dashboard = () => {
