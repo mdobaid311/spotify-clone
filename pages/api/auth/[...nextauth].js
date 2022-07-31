@@ -11,8 +11,8 @@ async function refreshAccessToken(token) {
     const url =
       "https://accounts.spotify.com/api/token?" +
       new URLSearchParams({
-        client_id: "48258a03142c48859bd8de0ac503aa3c",
-        client_secret: "c1b29a3c34c14dc9b2e7b1a3d0c61c02",
+        client_id: process.env.SPOTIFY_CLIENT_ID,
+        client_secret: process.env.SPOTIFY_CLIENT_SECRET,
         grant_type: "refresh_token",
         refresh_token: token.refreshToken,
       });
@@ -43,14 +43,14 @@ async function refreshAccessToken(token) {
       ...token,
       error: "RefreshAccessTokenError",
     };
-  }
+  } 
 }
 
 export default NextAuth({
   providers: [
     SpotifyProvider({
-      clientId: "48258a03142c48859bd8de0ac503aa3c",
-      clientSecret: "c1b29a3c34c14dc9b2e7b1a3d0c61c02",
+      clientId: process.env.SPOTIFY_CLIENT_ID,
+      clientSecret: process.env.SPOTIFY_CLIENT_SECRET,
       authorization:
         "https://accounts.spotify.com/authorize?scope=user-read-email,playlist-read-private,user-read-email,streaming,user-read-private,user-library-read,user-library-modify,user-read-playback-state,user-modify-playback-state,user-read-recently-played,user-follow-read",
     }),
