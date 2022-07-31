@@ -30,7 +30,7 @@ function Signin({ providers }) {
         objectFit="contain"
         className="animate-pulse"
       />
-      {Object.values(providers).map((provider) => (
+      {Object?.values(providers)?.map((provider) => (
         <div key={provider?.name}>
           <button
             className="text-white py-4 px-6 rounded-full bg-[#1db954] transition duration-300 ease-out border border-transparent uppercase font-bold text-xs md:text-base tracking-wider hover:scale-105 hover:bg-[#0db146]"
